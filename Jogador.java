@@ -19,5 +19,21 @@ public class Jogador {
         g.fillRect(x, y, larguraJogador, alturaJogador);
     }
 
+    public void atualizar(){
+        if(up){
+            y = y - 10;
+        }else if(down){
+            y = y + 10;
+        } 
+        //colisao
+        if(y + alturaJogador > Game.altura){
+            y = Game.altura - alturaJogador;
+        }else if(y < 0){
+            y = 0;
+        }
+    }
+
+   
+
 
 }
